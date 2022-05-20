@@ -37,7 +37,7 @@ export const generateCalender = async ({ bookingData, id }) => {
     duration: { hours: 0, minutes: 30 },
     title: "Bio-T consultation",
     description: "Free Consultation",
-    location: "Bari",
+    // location: "Bari",
     url: "https://biot.it/",
     geo: { lat: 41.11148, lon: 16.8554 },
     categories: ["Health", "Technology"],
