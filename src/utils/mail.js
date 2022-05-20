@@ -12,20 +12,16 @@ export const sendMail = async (recepient, id) => {
   const newFileName = `${id}.ics`;
 
   const filePath = path.join(publicFolderPath, newFileName);
-  console.log("filePath", filePath);
   fs.readFile(filePath, (err, data) => {
     if (err) {
       console.log("err", err);
-      // console.log("errrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr");
     }
     if (data) {
-      console.log("data", data);
-
       const msg = {
         // to: recepient, //problem solved
         to: recepient,
 
-        from: "lonelyvinay76@gmail.com",
+        from: "serena_chatbot@biot.it",
         subject: "Attachment",
         html: "<strong>your consultation with biot successful!</strong>",
         attachments: [
