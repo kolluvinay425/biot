@@ -21,7 +21,7 @@ export const sendMail = async (recepient, id) => {
         // to: recepient, //problem solved
         to: recepient,
 
-        from: "serena_chatbot@biot.it",
+        from: "lonelyvinay76@gmail.com",
         subject: "Attachment",
         html: "<strong>your consultation with biot successful!</strong>",
         attachments: [
