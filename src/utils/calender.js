@@ -13,8 +13,7 @@ export const generateCalender = async ({ bookingData, id }) => {
   let date = bookingData.appointmentDate.toString();
   const udate = date.replace("T00:00:00.000Z", " ");
   console.log("api date", udate); // Hours
-  // console.log(d.getMonth());
-  // console.log(d.getDate());
+
   const year = d.getFullYear();
   const month = d.getMonth() + 1;
   const day = d.getDate();
@@ -23,7 +22,6 @@ export const generateCalender = async ({ bookingData, id }) => {
   console.log("month----->", month);
   console.log("dat------->", day);
 
-  //   Kconsole.log(typeof startTime);
   const startTimee = bookingData.startTime.toString().slice(0, 2);
   const endTimee = bookingData.startTime.toString().slice(3, 5);
   console.log("full time:------->", startTimee, endTimee);
@@ -37,7 +35,7 @@ export const generateCalender = async ({ bookingData, id }) => {
     duration: { hours: 0, minutes: 30 },
     title: "Bio-T consultation",
     description: "Free Consultation",
-    // location: "Bari",
+    location: "Bari",
     url: "https://biot.it/",
     geo: { lat: 41.11148, lon: 16.8554 },
     categories: ["Health", "Technology"],
@@ -62,8 +60,6 @@ export const generateCalender = async ({ bookingData, id }) => {
     const newFileName = `${id}.ics`;
 
     const filePath = join(publicFolderPath, newFileName);
-    // asyncPineline(value, fs.createWriteStream(filePath));
     fs.writeFileSync(filePath, value);
-    // console.log("buffer fileeeeeeee", value);
   });
 };
