@@ -34,7 +34,7 @@ export const generateCalender = async ({ bookingData, id }) => {
     start: [year, month, day, parseInt(startTimee), parseInt(endTimee)],
     duration: { hours: 0, minutes: 30 },
     title: "Bio-T consultation",
-    description: "Free Consultation",
+    description: "Consultation",
     location: "Bari",
     url: "https://biot.it/",
     geo: { lat: 41.11148, lon: 16.8554 },
