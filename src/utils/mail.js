@@ -19,7 +19,9 @@ export const sendMail = async (recepient, id) => {
     if (data) {
       const msg = {
         to: recepient,
-        from: "serena_chatbot@biot.it",
+        // from: "serena_chatbot@biot.it",
+        from: "lonelyvinay76@gmail.com",
+
         subject: "Attachment",
         html: "<strong>your consultation with biot successful!</strong>",
         attachments: [

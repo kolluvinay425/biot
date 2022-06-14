@@ -106,25 +106,13 @@ userRouter.get("/all", async (req, res, next) => {
 userRouter.get("/slot", async (req, res, next) => {
   try {
     const date = req.query.date;
-    console.log(req.query.date);
-    // let [day, month, year] = date.split("/");
-    // const checkDay = day.length < 2;
-    // const checkMonth = month.length < 2;
+    const formatDate = moment(date, "DD-MM-YYYY").format("YYYY-MM-DD");
+    // const formatDate = moment(date).format("YYYY M D");
+    // console.log(req.query.date);
+    // console.log("date after conversion", formatDate);
 
-    // if (checkDay & checkMonth) {
-    //   day = "0" + day;
-    //   month = "0" + month;
-    //   console.log("day", day);
-    // } else if (checkDay) {
-    //   day = "0" + day;
-    // } else if (checkMonth) {
-    //   month = "0" + checkMonth;
-    // }
-
-    // const result = [year, month, day].join("-");
-    // console.log(result);
     const apps = await appointmentSchema.find({
-      appointmentDate: date,
+      appointmentDate: formatDate,
     });
 
     res.send(apps);
