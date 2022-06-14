@@ -49,6 +49,7 @@ userRouter.post("/", async (req, res, next) => {
       userName: req.query.username,
       email: req.query.email,
       phone: req.query.phone,
+      userType: req.query.user_type,
     };
     const postUser = new userSchema(userData);
     const saveUser = await postUser.save();
